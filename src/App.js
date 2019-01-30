@@ -1,20 +1,23 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { inc, dec } from "./actions/action";
+import { inc, dec } from "./actions/actions";
 import "./App.css";
+
 class App extends Component {
   render() {
     const { user, count, inc, dec } = this.props;
     return (
       <div className="App">
         <p>Привет, {user.name}!</p>
-        <div>{count}</div>
-        <button onClick={inc} className="btn btn-primary">
-          -
-        </button>
-        <button onClick={dec} className="btn btn-success">
-          +
-        </button>
+        <div className="result">{count}</div>
+        <div className="wrap-button">
+          <button onClick={inc} className="btn btn-primary">
+            -
+          </button>
+          <button onClick={dec} className="btn btn-success">
+            +
+          </button>
+        </div>
       </div>
     );
   }
